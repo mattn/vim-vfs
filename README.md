@@ -12,7 +12,7 @@ TBD
 
 ## Design
 
-### Namespace and protocol
+### Namespace and Protocol
 
 ```
 autoload/vfs/xxx.vim
@@ -38,7 +38,7 @@ vim-vfs use strictly URI generic syntax RFC 3986. On Windows, the path pointed t
 
 #### Errors
 
-If the function throw an exception, vim-vfs catch all of them. It should be string. And if the exception have namespace `vfs#xxx#...`, it will be displayed as message from the function.
+If the function throw an exception, vim-vfs catch all of them. It should be string. And if the exception have prefix `vfs#xxx:`, it will be displayed as message from the function.
 
 ### Interfaces
 
