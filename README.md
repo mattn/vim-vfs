@@ -19,13 +19,24 @@ autoload/vfs/xxx.vim
 ```
 
 vim-vfs load `xxx.vim` automatically when it's required to use the scheme `xxx`.
-`xxx` should be used as scheme name when vim read/write the URI. ex: `:e xxx:/path/to/the/file`.
+`xxx` should be used as scheme name when vim read/write the URI. ex: `:e xxx://path/to/the/file`.
 
 The scheme name must always be lowercase letters. but not contains `+`, `-` or `.`.
 
 ```
 scheme      = ALPHA *( ALPHA / DIGIT )
 ```
+
+```
+URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
+
+hier-part   = "//" authority path-abempty
+            / path-absolute
+            / path-rootless
+            / path-empty
+```
+
+See https://www.ietf.org/rfc/rfc3986.txt
 
 ### Objects
 
