@@ -27,6 +27,12 @@ The scheme name must always be lowercase letters. but not contains `+`, `-` or `
 scheme      = ALPHA *( ALPHA / DIGIT )
 ```
 
+### Objects
+
+### URI
+
+vim-vfs use strictly URI generic syntax RFC 3986. On Windows, the path pointed to local path `C:\Program Files\foo\bar.txt` should be `xxx://C:/Program%20Files/foo/bar.txt`.
+
 ```
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
 
@@ -39,12 +45,6 @@ hier-part   = "//" authority path-abempty
 Percent encodes `%e4%b8%96%e7%95%8c` will be decoded to UTF-8 string.
 
 See https://www.ietf.org/rfc/rfc3986.txt
-
-### Objects
-
-### URI
-
-vim-vfs use strictly URI generic syntax RFC 3986. On Windows, the path pointed to local path `C:\Program Files\foo\bar.txt` should be `xxx://C:/Program%20Files/foo/bar.txt`.
 
 #### File Object
 
