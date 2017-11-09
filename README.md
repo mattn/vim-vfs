@@ -17,7 +17,7 @@ autoload/vfs/xxx.vim
 ```
 
 vim-vfs load `xxx.vim` automatically when it's required to use the protocol `xxx`.
-`xxx` should be used as protocol name when vim open with `:e xxx:/path/to/the/file`.
+`xxx` should be used as protocol name when vim read/write the URI. ex: `:e xxx:/path/to/the/file`.
 
 ## Objects
 
@@ -36,7 +36,7 @@ vim-vfs use strictly URI generic syntax RFC 3986. On Windows, the path pointed t
 
 ### Errors
 
-If the function throw an exception, vim-vfs catch all of them. And if the exception have namespace `vfs#xxx#...`, it will be displayed as message from the function.
+If the function throw an exception, vim-vfs catch all of them. It should be string. And if the exception have namespace `vfs#xxx#...`, it will be displayed as message from the function.
 
 ## Interfaces
 
