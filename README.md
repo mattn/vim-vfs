@@ -33,10 +33,7 @@ xxx should be used as protocol name when vim open with `:e xxx:/path/to/the/file
 When the URI is ended with slash, it is treated as directory. vim-vfs call `vfs#readdir(uri)`. `vfs#readdir` must return list of dictionary like below.
 
 ```
-[
-  {"name": "name of the somefile"},
-  {"name": "name of the otherfile"}
-]
+[ {File Object}, {File Object}, ...]
 ```
 
 
