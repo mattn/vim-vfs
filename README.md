@@ -18,8 +18,14 @@ TBD
 autoload/vfs/xxx.vim
 ```
 
-vim-vfs load `xxx.vim` automatically when it's required to use the protocol `xxx`.
-`xxx` should be used as protocol name when vim read/write the URI. ex: `:e xxx:/path/to/the/file`.
+vim-vfs load `xxx.vim` automatically when it's required to use the scheme `xxx`.
+`xxx` should be used as scheme name when vim read/write the URI. ex: `:e xxx:/path/to/the/file`.
+
+The scheme name must always be lowercase letters. but not contains `+`, `-` or `.`.
+
+```
+scheme      = ALPHA *( ALPHA / DIGIT )
+```
 
 ### Objects
 
