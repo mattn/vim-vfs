@@ -29,7 +29,7 @@ scheme      = ALPHA *( ALPHA / DIGIT )
 
 ### Objects
 
-### URI
+#### URI
 
 vim-vfs use strictly URI generic syntax RFC 3986. On Windows, the path pointed to local path `C:\Program Files\foo\bar.txt` should be `xxx://C:/Program%20Files/foo/bar.txt`.
 
@@ -59,7 +59,7 @@ See https://www.ietf.org/rfc/rfc3986.txt
 
 If the function throw an exception, vim-vfs catch all of them. It should be string. And if the exception have prefix `vfs#xxx:`, it will be displayed as message from the function.
 
-### Interfaces
+### API
 
 #### Listing Files
 
@@ -95,6 +95,10 @@ The content should be encoded as `&encoding` always. So if you use DBCS(double b
 #### Write File
 
 vim-vfs call `vfs#writefile(uri, content)`. `content` can be passed string or list which is separated with `CR`. This is a way to pass binary-content like `systemlist()`. `vfs#writefile` does not return anything.
+
+### User Interface
+
+TBD
 
 ## License
 
