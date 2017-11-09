@@ -100,6 +100,18 @@ vim-vfs call `vfs#writefile(uri, content)`. `content` can be passed string or li
 
 TBD
 
+## TODO
+
+### Nested schemes
+
+Open the content bundled in zip file. And the zip file is located on remote SSH server.
+
+```
+:e ssh://host//home/thinca/vim.zip:/runtime/syntax.vim
+```
+
+
+
 ## License
 
 [NYSL](http://www.kmonos.net/nysl/index.en.html)
