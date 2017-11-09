@@ -36,6 +36,8 @@ hier-part   = "//" authority path-abempty
             / path-empty
 ```
 
+Percent encodes `%e4%b8%96%e7%95%8c` will be decoded to UTF-8 string.
+
 See https://www.ietf.org/rfc/rfc3986.txt
 
 ### Objects
