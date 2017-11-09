@@ -110,6 +110,11 @@ Open the content bundled in zip file. And the zip file is located on remote SSH 
 :e ssh://host//home/thinca/vim.zip:/runtime/syntax.vim
 ```
 
+### Better Name?
+
+* vfsrw
+* vimfs
+* something other
 
 
 ## License
