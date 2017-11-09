@@ -12,6 +12,10 @@ TBD
 
 ## Interfaces
 
+### URI
+
+vim-vfs use strictly URI generic syntax RFC 3986. On Windows, the path pointed to local path `C:\Program Files\foo\bar.txt` should be `xxx://C:/Program%20Files/foo/bar.txxt`.
+
 ### File Object
 
 ```
@@ -50,6 +54,16 @@ When the URI is not ended with slash, it is treated as a file. vim-vfs call `vfs
 }
 ```
 
+If the content is binary, object have list of strings which way is used on `systemlist()`.
+
+```
+{
+  "id": "identifier of the file",
+  "name": "name of the file",
+  "content": ["content", "of", "the", "file"]
+}
+```
+
 ### Write File
 
 vim-vfs call `vfs#writefile(uri, content)`. `content` can be passed string or list which is separated with `CR`. This is a way to pass binary-content like `systemlist()`. `vfs#writefile` does not return anything.
@@ -57,4 +71,3 @@ vim-vfs call `vfs#writefile(uri, content)`. `content` can be passed string or li
 ## License
 
 [NYSL](http://www.kmonos.net/nysl/index.en.html)
-
