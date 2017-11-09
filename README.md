@@ -74,6 +74,7 @@ The content should be encoded as `&encoding` always. So if you use DBCS(double b
 {
   "id": "identifier of the file",
   "name": "name of the file",
+  "filetype": "filetype of the content(optional)",
   "content": ["content", "of", "the", "file"]
 }
 ```
