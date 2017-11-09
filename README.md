@@ -10,7 +10,16 @@ This plugin only provide interface to the VFS.
 
 TBD
 
-## Interfaces
+## Namespace and protocol
+
+```
+autoload/vfs/xxx.vim
+```
+
+vim-vfs load `xxx.vim` automatically when it's required to use the protocol `xxx`.
+`xxx` should be used as protocol name when vim open with `:e xxx:/path/to/the/file`.
+
+## Objects
 
 ### URI
 
@@ -25,14 +34,11 @@ vim-vfs use strictly URI generic syntax RFC 3986. On Windows, the path pointed t
 }
 ```
 
-### Namespace and protocol
+### Errors
 
-```
-autoload/vfs/xxx.vim
-```
+If the function throw an exception, vim-vfs catch all of them. And if the exception have namespace `vfs#xxx#...`, it will be displayed as message from the function.
 
-vim-vfs load `xxx.vim` automatically when it's required to use the protocol `xxx`.
-`xxx` should be used as protocol name when vim open with `:e xxx:/path/to/the/file`.
+## Interfaces
 
 ### Listing Files
 
