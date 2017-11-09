@@ -68,7 +68,7 @@ When the URI is not ended with slash, it is treated as a file. vim-vfs call `vfs
 }
 ```
 
-The content should be encoded as `UTF-8` always. If you use non UTF-8 encodings, you must convert encoding with use `iconv()`. If the content is binary, object have list of strings which way is used on `systemlist()`.
+The content should be encoded as `&encoding` always. So if you use DBCS(double byte character set) encodings, and the content have UTF-8, it will lost some bytes when read the file. If the content is binary, object have list of strings which way is used on `systemlist()`.
 
 ```
 {
