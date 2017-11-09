@@ -1,6 +1,6 @@
 # vim-vfs
 
-This is work in progress.
+**This is work in progress**
 
 Virtual File System for Vim interface.
 
@@ -10,7 +10,9 @@ This plugin only provide interface to the VFS.
 
 TBD
 
-## Namespace and protocol
+## Design
+
+### Namespace and protocol
 
 ```
 autoload/vfs/xxx.vim
@@ -19,13 +21,13 @@ autoload/vfs/xxx.vim
 vim-vfs load `xxx.vim` automatically when it's required to use the protocol `xxx`.
 `xxx` should be used as protocol name when vim read/write the URI. ex: `:e xxx:/path/to/the/file`.
 
-## Objects
+### Objects
 
 ### URI
 
 vim-vfs use strictly URI generic syntax RFC 3986. On Windows, the path pointed to local path `C:\Program Files\foo\bar.txt` should be `xxx://C:/Program%20Files/foo/bar.txt`.
 
-### File Object
+#### File Object
 
 ```
 {
@@ -34,13 +36,13 @@ vim-vfs use strictly URI generic syntax RFC 3986. On Windows, the path pointed t
 }
 ```
 
-### Errors
+#### Errors
 
 If the function throw an exception, vim-vfs catch all of them. It should be string. And if the exception have namespace `vfs#xxx#...`, it will be displayed as message from the function.
 
-## Interfaces
+### Interfaces
 
-### Listing Files
+#### Listing Files
 
 When the URI is ended with slash, it is treated as a directory. vim-vfs call `vfs#readdir(uri)`. `vfs#readdir` must return list of dictionary like below.
 
@@ -48,7 +50,7 @@ When the URI is ended with slash, it is treated as a directory. vim-vfs call `vf
 [ {File Object}, {File Object}, ...]
 ```
 
-### Read File
+#### Read File
 
 When the URI is not ended with slash, it is treated as a file. vim-vfs call `vfs#readfile(uri)`. `uri` is a string to fully path to the uri. `vfs#readfile` must return dictionary like below.
 
@@ -70,7 +72,7 @@ If the content is binary, object have list of strings which way is used on `syst
 }
 ```
 
-### Write File
+#### Write File
 
 vim-vfs call `vfs#writefile(uri, content)`. `content` can be passed string or list which is separated with `CR`. This is a way to pass binary-content like `systemlist()`. `vfs#writefile` does not return anything.
 
